@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/main_menu_icon" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MindMate"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="48sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:text="Welcome to MindMate"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="24sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button_wrapper_1"
+            android:layout_width="224sp"
+            android:layout_height="58dp"
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="10sp"
+            app:cardCornerRadius="20dp">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="224dp"
+                android:layout_height="59dp"
+                android:layout_marginBottom="10sp"
+                android:background="#FFCD38"
+                android:fontFamily="sans-serif"
+                android:text="Log in"
+                android:textColor="#000000"
+                android:textSize="32sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button_wrapper_2"
+            android:layout_width="224sp"
+            android:layout_height="58dp"
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="55sp"
+            app:cardCornerRadius="20dp">
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="224dp"
+                android:layout_height="59dp"
+                android:layout_marginBottom="55sp"
+                android:background="#FFCD38"
+                android:fontFamily="sans-serif"
+                android:text="Sign Up"
+                android:textColor="#000000"
+                android:textColorLink="#FFEB3B"
+                android:textSize="32sp" />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
