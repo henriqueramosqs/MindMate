@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.example.mindmate.databinding.ActivityMainBinding
 import com.example.mindmate.ui.login.LoginActivity
+import com.example.mindmate.ui.login.SignUpActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,8 +17,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val loginBtt: Button = binding.loginBtt
+        val signUpBtt:Button = binding.sigupBtt
+
         loginBtt.setOnClickListener {
             Intent(this,LoginActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
+        signUpBtt.setOnClickListener {
+            Intent(this, SignUpActivity::class.java).also{
                 startActivity(it)
             }
         }
