@@ -244,7 +244,7 @@
         app:layout_constraintTop_toBottomOf="@+id/confirmPasswordSignup_CardWraper">
 
         <Button
-            android:id="@+id/ContinueBttnSignUp"
+            android:id="@+id/continueBtt_signup"
             android:layout_width="224dp"
             android:layout_height="59dp"
             android:background="#FFCD38"
