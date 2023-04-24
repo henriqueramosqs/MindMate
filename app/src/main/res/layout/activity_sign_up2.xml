@@ -36,6 +36,7 @@
             app:cardCornerRadius="20dp">
 
             <Button
+                android:id="@+id/goToVolunteer"
                 android:layout_width="match_parent"
                 android:layout_height="125sp"
                 android:background="#FFCD38"
@@ -53,6 +54,7 @@
             app:cardCornerRadius="20dp">
 
             <Button
+                android:id="@+id/tkto"
                 android:layout_width="match_parent"
                 android:layout_height="125sp"
                 android:background="#FFCD38"
