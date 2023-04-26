@@ -1,6 +1,7 @@
 package com.example.mindmate
 
 import android.os.Bundle
+import android.util.Config.LOGD
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -28,9 +29,6 @@ class ChatActivity : AppCompatActivity() {
         setContentView(R.layout.activity_chat)
         messageListView = findViewById<RecyclerView>(R.id.messageListView)
         val sendButton:Button = findViewById<Button>(R.id.sendButton)
-
-        messages.add(Msg("adasdadasdasdafsadfsdf",1))
-        messages.add(Msg("asdaspkjkfljksdfksdljf",2))
         // Set up the ArrayAdapter for the ListView
         messageListView.adapter = MessageAdapter(this,messages)
 
@@ -50,7 +48,7 @@ class ChatActivity : AppCompatActivity() {
             messageEditText.text.clear()
         }
 
-        val baseUrl = "http://127.0.0.1:8000/"
+        val baseUrl = "http://10.0.2.2:8000/"
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(baseUrl)
@@ -85,51 +83,8 @@ class ChatActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<List<BotResponseItem>?>, t: Throwable) {
                 Log.e(TAG,"API call failled")
+                Log.d(TAG, "onFailure: " + t.message);
             }
-        })
-
-        altData.enqueue(object :Callback<List<BotResponseItem>?>{
-            override fun onResponse(
-                call: Call<List<BotResponseItem>?>,
-                response: Response<List<BotResponseItem>?>
-            ) {
-                val responseBody = response.body()!!
-                Log.d(TAG,responseBody[0].res)
-
-            }
-
-            override fun onFailure(call: Call<List<BotResponseItem>?>, t: Throwable) {
-                Log.v("Try","It failled")
-            }
-        })
-
-
-        val testURL = "https://jsonplaceholder.typicode.com/"
-        val retrofitBuilder_test = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(testURL)
-            .build().create(API_interface2::class.java)
-
-        val retrofitDataTest = retrofitBuilder_test.get_test()
-
-        retrofitDataTest.enqueue(object: Callback<List<testingItem>?>{
-            override fun onResponse(
-                call: Call<List<testingItem>?>,
-                response: Response<List<testingItem>?>
-            ) {
-                val responseBody = response.body()!!
-
-                val stringBuilder= StringBuilder()
-                stringBuilder.append(responseBody[0].id)
-
-                messages.add(Msg(stringBuilder.toString(),2))
-                messageListView?.adapter?.notifyDataSetChanged()
-            }
-
-            override fun onFailure(call: Call<List<testingItem>?>, t: Throwable) {
-                Log.e("Testing_2","Failed")
-            }
-
         })
 
 

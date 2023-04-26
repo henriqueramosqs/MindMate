@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -82,11 +85,12 @@
             android:layout_marginTop="-16dp"
             android:background="#F3F3F3"
             android:forceHasOverlappingRendering="false"
-            android:hint="Describe why you want to contribute within our app"
             android:overScrollMode="always"
             android:textColorHint="#8C8C8C"
             app:cardCornerRadius="20dp"
             tools:ignore="MissingConstraints">
+<!--            android:hint="Describe why you want to contribute within our app"-->
+
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -157,3 +161,5 @@
             android:textSize="32sp" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
