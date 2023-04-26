@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-16dp"
             android:background="#F3F3F3"
-            android:hint="kajsdkjasjkds"
+            android:hint=""
             android:textColorHint="#8C8C8C"
             app:cardCornerRadius="20dp"
             tools:ignore="MissingConstraints">
@@ -126,7 +126,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-16dp"
             android:background="#F3F3F3"
-            android:hint="kajsdkjasjkds"
+            android:hint=""
             android:textColorHint="#8C8C8C"
             app:cardCornerRadius="20dp"
             tools:ignore="MissingConstraints">
@@ -171,7 +171,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-16dp"
             android:background="#F3F3F3"
-            android:hint="kajsdkjasjkds"
+            android:hint=""
             android:textColorHint="#8C8C8C"
             app:cardCornerRadius="20dp"
             tools:ignore="MissingConstraints">
@@ -179,6 +179,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:inputType="textPassword"
                 android:layout_marginLeft="10sp"
                 android:layout_marginBottom="0sp"
                 android:background="#F3F3F3"
@@ -216,7 +217,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-16dp"
             android:background="#F3F3F3"
-            android:hint="kajsdkjasjkds"
+            android:hint=""
             android:textColorHint="#8C8C8C"
             app:cardCornerRadius="20dp"
             tools:ignore="MissingConstraints">
@@ -224,6 +225,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:inputType="textPassword"
                 android:layout_marginLeft="10sp"
                 android:layout_marginBottom="0sp"
                 android:background="#F3F3F3"
