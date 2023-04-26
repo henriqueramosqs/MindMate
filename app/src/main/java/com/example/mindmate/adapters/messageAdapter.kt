@@ -1,23 +1,27 @@
 package com.example.mindmate.adapters
 
+import android.R
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mindmate.R
+import com.example.mindmate.Msg
 
-class MessageAdapter(private val context: Context, private val msg_list:MutableList<String>):
+
+class MessageAdapter(private val context: Context, private val msg_list:MutableList<Msg>):
 RecyclerView.Adapter<MessageAdapter.MessageViewHolder>(){
 
     inner class MessageViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.txtView)
+        val textView: TextView = view.findViewById(com.example.mindmate.R.id.txtView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
         val adapterLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.message_sent, parent, false)
+            .inflate(com.example.mindmate.R.layout.message_sent, parent, false)
 
         return MessageViewHolder(adapterLayout)
     }
@@ -26,6 +30,16 @@ RecyclerView.Adapter<MessageAdapter.MessageViewHolder>(){
 
     override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
         val item = msg_list[position]
-        holder.textView.text =  item
+        if(item.type==2){
+            holder.textView.setBackgroundResource(com.example.mindmate.R.drawable.bg_received_message)
+
+            val params = ConstraintLayout.LayoutParams(
+                ConstraintLayout.LayoutParams.WRAP_CONTENT,
+                ConstraintLayout.LayoutParams.WRAP_CONTENT
+            )
+            params.startToStart = ConstraintLayout.LayoutParams.PARENT_ID
+            holder.textView.layoutParams = params
+        }
+        holder.textView.text =  item.txt
     }
 }
